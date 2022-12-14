@@ -1,25 +1,25 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI()
 
 
-userInfo={'data':[
-        {
-            'userID':1,
-            'name':'Om'
-        },
-        {
-            'userID':2,
-            'name':'Yash'
-        },
-        {
-            'userID':3,
-            'name':'Kundan'
-        }
-    ]}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/')
 def index():
-    return userInfo
+    return{'message':'This is api'}
+
+
+@app.post('/upload')
+def upload(image:UploadFile):
+
+    return {'label':image.filename}
 
 
