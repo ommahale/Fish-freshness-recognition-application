@@ -26,7 +26,7 @@ class Classifier {
       var output = jsonDecode(data.body);
       return output;
     } catch (e) {
-      return {'error': e, 'label': '$e'};
+      return {'label': '$e'};
     }
   }
 
