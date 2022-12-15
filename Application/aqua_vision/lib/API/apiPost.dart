@@ -23,8 +23,8 @@ class Classifier {
       request.headers.addAll(header);
       StreamedResponse res = await request.send();
       Response data = await http.Response.fromStream(res);
-      print(data.body);
-      return {'label': 'connected'};
+      var output = jsonDecode(data.body);
+      return output;
     } catch (e) {
       return {'error': e, 'label': '$e'};
     }
