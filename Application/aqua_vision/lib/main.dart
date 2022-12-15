@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    theme: ThemeData(primaryColor: Colors.cyan[700]),
     home: const MyApp(),
     routes: {
       '/home': (context) => const MyApp(),
-      '/image': (context) => ImagePicker(),
+      '/image': (context) => ImageDisplay(),
     },
   ));
 }
