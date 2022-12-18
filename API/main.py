@@ -18,7 +18,15 @@ def index():
 
 
 @app.post('/upload')
-def upload(image:UploadFile):
+async def upload(image:UploadFile):
+    image.file.seek(0)
+    image_byte_data=await image.file.read()
+    image.file.close()
+    
+    
+    #The data recived from the post request is stored in UTF-8 byte encoded format in image_byte_data variable
+    #Decode the image_byte_data for futer operations
+
 
     return {'label':image.filename}
 
