@@ -17,13 +17,13 @@ app.add_middleware(
 def index():
     return{'message':'This is api'}
 
-(
 
 @app.post('/upload')
 async def upload(image:UploadFile):
-    if image.content_type =='jpeg':
-        img = cv.imread(image.file)
+    if image.content_type =='image/jpeg':
+        img = cv.imread(image.filename)
         img = cv.resize(img,(416,416), interpolation = cv.INTER_LINEAR)
+        return{'Img':img}
     
         
      
