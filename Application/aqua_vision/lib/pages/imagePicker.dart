@@ -14,12 +14,14 @@ class ImageDisplay extends StatefulWidget {
 class _ImageDisplayState extends State<ImageDisplay> {
   File? imageFile;
   var output;
+  bool isimage = false;
   Future<void> getImage({required ImageSource source}) async {
     final file = await ImagePicker().pickImage(source: source);
     if (file?.path != null) {
       final Classifier c = Classifier();
       setState(() {
         imageFile = File(file!.path);
+        isimage = true;
       });
       output = await c.getData(imageFile!, imageFile!.path);
       print(output['label']);
@@ -65,7 +67,7 @@ class _ImageDisplayState extends State<ImageDisplay> {
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: const Text(
-                      'Image Should Appear Here',
+                      'Please select/capture the image',
                       style: TextStyle(fontSize: 26),
                     ),
                   ),
@@ -104,6 +106,28 @@ class _ImageDisplayState extends State<ImageDisplay> {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                if (isimage)
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/output',
+                            arguments: {imageFile, output});
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Show result',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(Icons.arrow_circle_right)
+                        ],
+                      ))
               ],
             ),
           ),
