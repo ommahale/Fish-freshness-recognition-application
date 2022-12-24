@@ -24,7 +24,6 @@ class _ImageDisplayState extends State<ImageDisplay> {
         isimage = true;
       });
       output = await c.getData(imageFile!, imageFile!.path);
-      print(output['label']);
     }
   }
 
@@ -32,7 +31,7 @@ class _ImageDisplayState extends State<ImageDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fish Freshness Detector"),
+        title: const Text("Fish Freshness Detector"),
         centerTitle: true,
         backgroundColor: Colors.cyan[700],
       ),
@@ -82,11 +81,14 @@ class _ImageDisplayState extends State<ImageDisplay> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.cyan[700],
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0)),
+                                borderRadius: BorderRadius.circular(10.0)),
                           ),
-                          child: const Text('Capture Image',
-                              style: TextStyle(
-                                  fontSize: 18, color: Colors.white))),
+                          child: const Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: Text('Capture Image',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.white)),
+                          )),
                     ),
                     const SizedBox(
                       width: 20,
@@ -98,11 +100,14 @@ class _ImageDisplayState extends State<ImageDisplay> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.cyan[700],
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0)),
+                                borderRadius: BorderRadius.circular(10.0)),
                           ),
-                          child: const Text('Select Image',
-                              style: TextStyle(
-                                  fontSize: 18, color: Colors.white))),
+                          child: const Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: Text('Select Image',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.white)),
+                          )),
                     ),
                   ],
                 ),

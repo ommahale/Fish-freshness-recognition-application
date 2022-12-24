@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               ),
               SizedBox(
                 height: 50,
-                width: 190,
+                width: 230,
                 child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor:
