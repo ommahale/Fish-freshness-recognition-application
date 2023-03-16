@@ -1,7 +1,7 @@
+import io
 from fastapi import FastAPI,UploadFile,File
 from fastapi.middleware.cors import CORSMiddleware
-import cv2 as cv
-
+from PIL import Image
 app=FastAPI()
 
 
@@ -19,11 +19,12 @@ def index():
 
 
 @app.post('/upload')
-async def upload(image:UploadFile):
-    if image.content_type =='image/jpeg':
-        img = cv.imread(image.filename)
-        img = cv.resize(img,(416,416), interpolation = cv.INTER_LINEAR)
-        return{'Img':img}
+async def upload(image:UploadFile=File(...)):
+        contents = await image.read()
+        image = Image.open(io.BytesIO(contents))
+        image_width = image.size[0]
+        image_height = image.size[1]
+        return{"label":""}
     
         
      
