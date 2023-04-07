@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.5
   image_picker: ^0.8.6
   dio: ^4.0.6
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_test:
@@ -92,3 +93,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_native_splash:
+  color: "#ffffff"
+  color_dark: "#ffffff"
+  image: "assets/fish.png"
+  android: true
+  ios: true

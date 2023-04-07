@@ -1,19 +1,14 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class DisplayOut extends StatelessWidget {
   const DisplayOut({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var data = ModalRoute.of(context)!.settings.arguments as Set;
-    File _image = data.first;
-    String _label = data.last['label'];
-    print(_image.runtimeType);
-    print(_label);
+    var data = ModalRoute.of(context)!.settings.arguments as Map;
+    File image = data['file'];
+    String label = data['output']['label'];
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -29,31 +24,32 @@ class DisplayOut extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.grey,
-                    image: DecorationImage(image: FileImage(_image)),
+                    image: DecorationImage(image: FileImage(image)),
                     border: Border.all(width: 8, color: Colors.black12),
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SizedBox(
-                  width: 300,
+                  width: 200,
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         color: Colors.greenAccent[400],
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        gradient: LinearGradient(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(5)),
+                        gradient: const LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [
-                              Color.fromARGB(255, 24, 255, 197),
-                              Color.fromARGB(255, 0, 255, 132)
+                              Color.fromARGB(255, 0, 81, 168),
+                              Color.fromARGB(255, 1, 117, 61)
                             ])),
                     child: Text(
-                      '$_label',
-                      style: TextStyle(
+                      label,
+                      style: const TextStyle(
                           color: Colors.white, letterSpacing: 2, fontSize: 16),
                       textAlign: TextAlign.center,
                     ),

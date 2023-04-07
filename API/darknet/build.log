@@ -1,0 +1,81 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20230317021534
+Username: LAPTOP-7VOQIH91\HP
+RunAs User: LAPTOP-7VOQIH91\HP
+Configuration Name: 
+Machine: LAPTOP-7VOQIH91 (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\HP\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\browser\media\shellIntegration.ps1" } catch {}
+Process ID: 15076
+PSVersion: 5.1.22621.1037
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.1037
+BuildVersion: 10.0.22621.1037
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is F:\Fish-freshness-recognition-application\API\darknet/build.log
+Build script version 3.1.0, utils module version 0.3.0
+Working directory: F:\Fish-freshness-recognition-application\API\darknet, log file: F:\Fish-freshness-recognition-application\API\darknet/build.log, build.ps1 is in submodule: False
+PowerShell version:
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      22621  1037
+Running on Windows Powershell, please consider update and running on newer Powershell versions
+vcpkg bootstrap script: bootstrap-vcpkg.bat
+CUDA is enabled
+CUDNN is enabled
+OPENCV is enabled
+OPENCV with CUDA extension is not enabled, you can enable it passing -EnableOPENCV_CUDA
+VCPKG is enabled
+VCPKG will be updated to latest version if found
+VisualStudio integration is enabled, please pass -DoNotSetupVS to the script to disable
+Yolo C# wrapper integration is disabled, please pass -EnableCSharpWrapper to the script to enable. You must be on Windows!
+Ninja is enabled, please pass -DoNotUseNinja to the script to disable
+ForceCPP build mode is disabled, please pass -ForceCPP to the script to enable
+Using git from C:\Program Files\Git\cmd\git.exe
+This tool has been cloned with git and supports self-updating mechanism
+This tool will self-update sources, please pass -DoNotUpdateTOOL to the script to disable
+Could not find CMake, please install it
+Press any key to continue...
+
+PS>TerminatingError(): "ScriptHalted"
+>> TerminatingError(): "ScriptHalted"
+>> TerminatingError(): "ScriptHalted"
+ScriptHalted
+ScriptHalted
+At F:\Fish-freshness-recognition-application\API\darknet\scripts\utils.psm1:320 char:5
++     throw
++     ~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], RuntimeException
+    + FullyQualifiedErrorId : ScriptHalted
+
+(env) ]633;E;.\x5cbuild.ps1 -UseVCPKG -EnableOPENCV -EnableCUDA -EnableCUDNN]633;D;1]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPI\x5cdarknetPS F:\Fish-freshness-recognition-application\API\darknet> ]633;B
+PS>./darknet detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
+(env) ]633;E;./darknet detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg]633;D;0]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPI\x5cdarknetPS F:\Fish-freshness-recognition-application\API\darknet> ]633;B
+PS>uvicorn main:app --reload
+INFO:     Stopping reloader process [22052]
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+(env) ]633;E;uvicorn main:app --reload]633;D;1]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPI\x5cdarknetPS F:\Fish-freshness-recognition-application\API\darknet> ]633;B
+PS>cd ..
+(env) ]633;E;cd ..]633;D;0]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPIPS F:\Fish-freshness-recognition-application\API> ]633;B
+PS>uvicorn main:app --reload
+
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+(env) ]633;E;uvicorn main:app --reload]633;D;1]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPIPS F:\Fish-freshness-recognition-application\API> ]633;B
+PS>pip install torch
+
+(env) ]633;E;pip install torch]633;D;0]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPIPS F:\Fish-freshness-recognition-application\API> ]633;B
+PS>pip install yolov5
+
+(env) ]633;E;pip install yolov5]633;D;0]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPIPS F:\Fish-freshness-recognition-application\API> ]633;B
+PS>uvicorn main:app --reload
+
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+(env) ]633;E;uvicorn main:app --reload]633;D;1]633;A]633;P;Cwd=F:\x5cFish-freshness-recognition-application\x5cAPIPS F:\Fish-freshness-recognition-application\API> ]633;B
